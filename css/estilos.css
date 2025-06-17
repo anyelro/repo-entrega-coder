@@ -1,0 +1,255 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #000;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  color: #e30613;
+}
+
+.Headerbackground {
+  background-color: #1a1a1a;
+  padding: 1rem 0;
+  color: #fff;
+}
+.Headerbackground .contenedorheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+}
+.Headerbackground .contenedorheader .LogoBull {
+  width: 120px;
+  max-width: 100%;
+  height: auto;
+}
+.Headerbackground .contenedorheader nav ul {
+  display: flex;
+  gap: 1rem;
+}
+.Headerbackground .contenedorheader nav ul li a {
+  color: #fff;
+  font-weight: 500;
+  padding: 0.5rem;
+}
+.Headerbackground .contenedorheader nav ul li a:hover {
+  border-bottom: 2px solid #e30613;
+}
+
+.contenedor-info,
+.contenedor-clases {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  text-align: left;
+}
+.contenedor-info .bloque-contenido,
+.contenedor-clases .bloque-contenido {
+  max-width: 600px;
+}
+.contenedor-info .bloque-contenido ul,
+.contenedor-clases .bloque-contenido ul {
+  padding-left: 1.5rem;
+}
+.contenedor-info .bloque-contenido ul li,
+.contenedor-clases .bloque-contenido ul li {
+  list-style: disc;
+  margin-bottom: 0.5rem;
+}
+.contenedor-info .imagen-info,
+.contenedor-info .imagen-clases,
+.contenedor-clases .imagen-info,
+.contenedor-clases .imagen-clases {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.titulo-galeria {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.galeria .item-galeria {
+  text-align: center;
+}
+.galeria .item-galeria img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.galeria .item-galeria p {
+  margin-top: 0.5rem;
+}
+
+.formulario-contacto {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.formulario-contacto label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+.formulario-contacto input[type=text],
+.formulario-contacto input[type=number] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.formulario-contacto button {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #e30613;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.formulario-contacto button:hover {
+  background-color: #b1050f;
+}
+
+.footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+.footer .footer-texto {
+  margin-bottom: 1rem;
+}
+.botonhome {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #e30613;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.botonhome:hover {
+  background-color: #b1050f;
+}
+
+.footer .footer-logos {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.footer .footer-logos img {
+  width: 30px;
+  height: 30px;
+}
+
+/* === Ajustes específicos para el index (video + texto lado a lado) === */
+.contenidohome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+.contenedorintro {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+.contenedorvideo {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+.video-instagram {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* === Media queries para mobile === */
+@media (max-width: 768px) {
+  .Headerbackground .contenedorheader {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .Headerbackground nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 1rem;
+  }
+
+  .contenidohome,
+  .contenedor-info,
+  .contenedor-clases {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contenedorintro,
+  .contenedorvideo,
+  .bloque-contenido,
+  .imagen-info,
+  .imagen-clases {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .video-instagram {
+    width: 100%;
+    height: auto;
+  }
+
+  .formulario-contacto {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .footer .footer-logos {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+/*# sourceMappingURL=estilos.css.map */

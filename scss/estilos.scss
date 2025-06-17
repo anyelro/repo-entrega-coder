@@ -1,0 +1,232 @@
+// ===========================
+// VARIABLES
+// ===========================
+$color-principal: #000;
+$color-secundario: #fff;
+$color-acento: #e30613;
+$color-footer: #1a1a1a;
+$fuente-principal: 'Roboto', sans-serif;
+
+// ===========================
+// MIXINS
+// ===========================
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
+// ===========================
+// ESTILOS GENERALES
+// ===========================
+body {
+  font-family: $fuente-principal;
+  margin: 0;
+  padding: 0;
+  background-color: $color-secundario;
+  color: $color-principal;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $color-principal;
+
+  &:hover {
+    color: $color-acento;
+  }
+}
+
+// ===========================
+// HEADER
+// ===========================
+.Headerbackground {
+  background-color: $color-footer;
+  padding: 1rem 0;
+  color: $color-secundario;
+
+  .contenedorheader {
+    @include flex-center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+
+    .LogoBull {
+      width: 120px;
+      @include responsive-img;
+    }
+
+    nav {
+      ul {
+        display: flex;
+        gap: 1rem;
+
+        li {
+          a {
+            color: $color-secundario;
+            font-weight: 500;
+            padding: 0.5rem;
+
+            &:hover {
+              border-bottom: 2px solid $color-acento;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ===========================
+// CONTENEDOR INFO & CLASES
+// ===========================
+.contenedor-info,
+.contenedor-clases {
+  @include flex-center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+  text-align: left;
+
+  .bloque-contenido {
+    max-width: 600px;
+
+    ul {
+      padding-left: 1.5rem;
+      li {
+        list-style: disc;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .imagen-info,
+  .imagen-clases {
+    max-width: 400px;
+    @include responsive-img;
+    border-radius: 10px;
+  }
+}
+
+// ===========================
+// GALERÍA
+// ===========================
+.titulo-galeria {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+
+  .item-galeria {
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    p {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// ===========================
+// FORMULARIO DE CONTACTO
+// ===========================
+.formulario-contacto {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    background-color: $color-acento;
+    color: $color-secundario;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($color-acento, 10%);
+    }
+  }
+}
+
+// ===========================
+// FOOTER
+// ===========================
+.footer {
+  background-color: $color-footer;
+  color: $color-secundario;
+  padding: 1rem;
+  text-align: center;
+
+  .footer-texto {
+    margin-bottom: 1rem;
+  }
+
+  .footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+.botonhome {
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: darken($rojo, 10%);
+  }
+}
+$redes: instagram, whatsapp;
+
+@each $red in $redes {
+  .logo-#{$red} {
+    background-image: url('../img/#{$red}.png');
+  }
+}
